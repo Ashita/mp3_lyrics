@@ -8,11 +8,11 @@ tag = ID3Lib::Tag.new('/home/ashita/Mousika/Green Day/American Idiot/12 Homecomi
 wikilyrics = WikiLyrics.new(tag.artist, tag.title)
 puts wikilyrics.lyric
 
-#on vire les comments de merde
+#we remove the fucking comments
 tag.remove_frame(:COMM)
 
-#on rajoute les paroles
+#we add the lyric
 tag.lyrics = ""
 
-#et on sauvegarde
+#and we save
 #tag.update!

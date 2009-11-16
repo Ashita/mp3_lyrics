@@ -19,18 +19,18 @@ class WikiLyrics
 	end
 
 	private
-		#récupère uniquement le text dans la div lyricbox
+		#retrieve only text in 'lyricbox div'
 		def get_lyrics
 			lyric = ""
-			get_document.css('div.lyricbox').children.each do |node|
+			get_page.css('div.lyricbox').children.each do |node|
 				lyric << node.content if node.text?
 				lyric << "\n" if node.name == "br"
 			end
 			lyric
 		end
 
-		#récup la page html
-		def get_document
+		#retrieve html page
+		def get_page
 			Nokogiri::HTML(open(@url))
 		end
 end
